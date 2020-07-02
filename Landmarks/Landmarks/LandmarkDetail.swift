@@ -8,9 +8,8 @@ A view showing the details for a landmark.
 import SwiftUI
 
 struct LandmarkDetail: View {
-    
     var landmark: Landmark
-    
+
     var body: some View {
         VStack {
             MapView(coordinate: landmark.locationCoordinate)
@@ -22,8 +21,9 @@ struct LandmarkDetail: View {
                 .padding(.bottom, -130)
 
             VStack(alignment: .leading) {
-                Text("Turtle Rock")
+                Text(landmark.name)
                     .font(.title)
+
                 HStack(alignment: .top) {
                     Text(landmark.park)
                         .font(.subheadline)
