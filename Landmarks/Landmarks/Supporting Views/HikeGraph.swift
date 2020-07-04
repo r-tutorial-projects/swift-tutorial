@@ -1,3 +1,10 @@
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+The elevation, heart rate, and pace of a hike plotted on a graph.
+*/
+
 import SwiftUI
 
 func rangeOfRanges<C: Collection>(_ ranges: C) -> Range<Double>
