@@ -1,10 +1,3 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-The elevation, heart rate, and pace of a hike plotted on a graph.
-*/
-
 import SwiftUI
 
 func rangeOfRanges<C: Collection>(_ ranges: C) -> Range<Double>
@@ -17,6 +10,14 @@ func rangeOfRanges<C: Collection>(_ ranges: C) -> Range<Double>
 
 func magnitude(of range: Range<Double>) -> Double {
     return range.upperBound - range.lowerBound
+}
+
+extension Animation {
+    static func ripple(index: Int) -> Animation {
+        Animation.spring(dampingFraction: 0.5)
+            .speed(2)
+            .delay(0.03 * Double(index))
+    }
 }
 
 struct HikeGraph: View {
@@ -51,6 +52,8 @@ struct HikeGraph: View {
                         range: data[index][keyPath: self.path],
                         overallRange: overallRange)
                     .colorMultiply(self.color)
+                    .transition(.slide)
+                    .animation(.ripple(index: index))
                 }
                 .offset(x: 0, y: proxy.size.height * heightRatio)
             }
