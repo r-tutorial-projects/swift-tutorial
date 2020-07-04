@@ -1,3 +1,9 @@
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+A view that shows a badge for hiking.
+*/
 
 import SwiftUI
 
